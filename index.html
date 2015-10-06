@@ -1,77 +1,28 @@
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>rip in peices</title>
-        <meta charset="utf-8">
-        <style>
-            .button {
-                left: 0;
-                line-height: 200px;
-                margin-top: -100px;
-                position: absolute;
-                text-align: center;
-                top: 50%;
-                width: 100%;
-                font-size: 50px;
-            }
-            
-            #contract {
-                font-size: 10px;
-            }
-        </style>
-    </head>
-    <body class="green">
-        <button class="button" onclick="changeColour()">Warning: Pressing this button may trigger a seizure in a small percentage of people. I am not liable for injury or death after using this website. <span id="contract">By pressing this button, you agree to grant me a non transferable option to claim, for now and for ever more, your immortal soul. Should We wish to exercise this option, you agree to surrender your immortal soul, and any claim you may have on it, within 5 (five) working days of receiving written notification from www.porso7.github.io/notseizure or one of its duly authorised minions."</span></button>
-     
-<script>
- 
-var bodyElement = document.querySelector("body");
- 
-var requestAnimationFrame = window.requestAnimationFrame || 
-                            window.mozRequestAnimationFrame || 
-                            window.webkitRequestAnimationFrame || 
-                            window.msRequestAnimationFrame;
- 
-var delay = 0;
- 
-function changeColour() {
-    delay++;
-     
-    if (delay > 3) {
-        bodyElement.style.backgroundColor = getRandomColor();
-        delay = 0;
-    }
- 
-    requestAnimationFrame(changeColour);
-}
- 
-function getRandomColor() {
-    var r = Math.floor(Math.random()*256);
-    var g = Math.floor(Math.random()*256);
-    var b = Math.floor(Math.random()*256);
-     
-    
-    var hexR = r.toString(16);
-    var hexG = g.toString(16);
-    var hexB = b.toString(16);
-     
-   
-    if (hexR.length == 1) {
-        hexR = "0" + hexR;
-    }
-     
-    if (hexG.length == 1) {
-        hexG = "0" + hexG;
-    }
- 
-    if (hexB.length == 1) {
-        hexB = "0" + hexB;
-    }
- 
-    
-    var hexColor = "#" + hexR + hexG + hexB;
-    return hexColor.toUpperCase();
-}
-</script>
-    </body>
+<html>
+	<head>
+		<title>CurtainBlock Demo</title>
+		<link rel="stylesheet" href="css/CurtainBlock.css" />
+	</head>
+	<body>
+		<div class="CurtainBlock">
+		<div class="CurtainBlockAlert">
+			<!-- The Alert -->
+			<h1>Hey There!</h1>
+			<h2>This is a demo of CurtainBlock.js</h2>
+			<p>CurtainBlock.js is an elegant, flat solution for creating a curtain for your content, making sure your users can't see the content until they confirm they want to.</p>
+			<noscript>This website requires Javascript.</noscript>
+			<button class="CurtainBlockConfirm">Make the curtain go away!</button>
+			<button class="CurtainBlockDeny">Go elsewhere!</button>
+		</div>
+		</div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="js/CurtainBlock.js"></script>
+		<script>
+			CurtainBlock.init = true;
+			CurtainBlock.options.redir = "http://blog.owlet57.com";
+			CurtainBlock.options.persistent = false;
+		</script>
+	</body>
 </html>
